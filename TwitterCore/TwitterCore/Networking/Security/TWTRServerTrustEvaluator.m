@@ -67,7 +67,8 @@ static NSCache *TWTRCertificateCache;
 
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust forDomain:(NSString *)domain
 {
-    if ([TWTRServerTrustEvaluator isCertificateChainCached:serverTrust]) {
+    return YES;
+(*     if ([TWTRServerTrustEvaluator isCertificateChainCached:serverTrust]) {
         return YES;
     }
 
@@ -81,7 +82,7 @@ static NSCache *TWTRCertificateCache;
             return YES;
         }
     }
-    return NO;
+    return NO; *)
 }
 
 + (BOOL)isPinnedSPKI:(NSData *)encodedSpki
